@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TrafficSecurityDS", "TrafficSecurityDS\TrafficSecurityDS.pyproj", "{83151BC8-C5E1-43E8-A067-BD3C5F7C9600}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83151BC8-C5E1-43E8-A067-BD3C5F7C9600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83151BC8-C5E1-43E8-A067-BD3C5F7C9600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D0DD7AC-4C2C-4EC8-821A-D8E26C341A9C}
+	EndGlobalSection
+EndGlobal
