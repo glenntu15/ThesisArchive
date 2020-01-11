@@ -68,7 +68,7 @@ int DataManager::ReadFile(std::string filename)
 	int nread = Split(slist, str);
 	for (int i = 0; i < nread; i++) {
 		entry = const_cast<char*>(slist[i].c_str());
-		isequal = strncmp("DSN", entry, 3);
+        isequal = _strcmpi("DSN", entry);
 		if (isequal == 0) {
 			if (i <= nread) {
                 dsname = slist[i + 1]; // save dsname
@@ -77,11 +77,11 @@ int DataManager::ReadFile(std::string filename)
 			}
 		}
 		
-		isequal = strncmp("DST", entry, 3);
+        isequal = _strcmpi("DST", entry);
 
 		if (isequal == 0) {
 			entry = const_cast<char*>(slist[i+1].c_str());
-            isequal = strcmpi("standard", entry);  // case insensitive
+            isequal = _strcmpi("standard", entry);  // case insensitive
 			if (isequal == 0) {
 				currentType = T_standard;
                 continue;
@@ -90,7 +90,7 @@ int DataManager::ReadFile(std::string filename)
             isequal = _strcmpi("standardpairs", entry);  // case insensitive
             if (isequal == 0) {
                 currentType = T_StandardPairs;
-                continue;;
+                continue;
             }
             isequal = _strcmpi("augmentedpairs", entry);  // case insensitive
             if (isequal == 0) {
@@ -204,6 +204,10 @@ void DataManager::Reset()
 
     for (int n=0;n<numPairs;n++) {
         pdata[n].clear();
+    }
+
+    int numMetadata = metadata.length();
+    for (int n = 0;n<numMetadata;n++) {
         metadata[n].clear();
     }
     if (numPairs > 0) {
@@ -781,7 +785,7 @@ int DataManager::ReadPairsSeries(std::ifstream &infile)
     //    numVars = nread / 3;
     //}
     // set up holders for metadata if needed
-    int ncols = numVars + numMetaCollumns;
+    //int ncols = numVars + numMetaCollumns;
     if (numMetaCollumns > 0) {
         for (int m = 0;m<numMetaCollumns;m++){
             QVector<QString> metalist;
@@ -850,9 +854,9 @@ int DataManager::ReadPairsSeries(std::ifstream &infile)
         } // end of loop on data columns
         for (int m = 0;m<numMetaCollumns;m++){
             entry = const_cast<char*>(slist[numVars+m].c_str());
-            QString ddd = QString::number(numPoints);
+            //QString ddd = QString::number(numPoints);
             //QString ddd = QString("XXX");
-            metadata[m].push_back(ddd);
+            metadata[m].push_back(entry);
         }
         numPoints++;
     }
@@ -916,6 +920,8 @@ QString DataManager::getMetadata(QString graphName, int pointid)
             break;
         }
     }
+    pairdata pd = pdata[index][pointid];
+    int mdid = pd.indx;
     datastring = metadata[index][pointid];
     return datastring;
 }

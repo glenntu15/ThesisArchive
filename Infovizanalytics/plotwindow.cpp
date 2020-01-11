@@ -313,7 +313,7 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
                         customPlotXY->graph(indx)->setLineStyle(static_cast<QCPGraph::LineStyle>(1));
                     if(pointsOnly)
                         customPlotXY->graph(indx)->setLineStyle((QCPGraph::LineStyle)0);
-                    customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+                    customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 7));  // was 3
                 }
 
                 QPen pen = colorTable.GetPen(n-1,numColorGroups);
@@ -343,10 +343,10 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
                 if ((showPoints) || (pointsOnly)) {
                     if (showPoints){
                         customPlotXY->graph(indx)->setLineStyle((QCPGraph::LineStyle)1);
-                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3)); // WAS 3
                     } else {
                         customPlotXY->graph(indx)->setLineStyle((QCPGraph::LineStyle)0);
-                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 6));
+                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4));  // was 6
                     }
                 }
 
@@ -388,7 +388,7 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
                         customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
                     } else {
                         customPlotXY->graph(indx)->setLineStyle((QCPGraph::LineStyle)0);
-                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 6));
+                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4));
                     }
                 }
                 QPen pen = colorTable.GetPen(npen,numColorGroups);
@@ -411,7 +411,7 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
                         customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
                     } else {
                         customPlotXY->graph(indx)->setLineStyle((QCPGraph::LineStyle)0);
-                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 6));
+                        customPlotXY->graph(indx)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4));
                     }
                 }
                 QPen pens = colorTable.GetPen(npen,numColorGroups,100-15);
@@ -1327,9 +1327,10 @@ void PlotWindow::graphClicked(QCPAbstractPlottable *plottable, int dataIndex)
             double xn = plottable->interface1D()->dataMainKey(dataIndex+1);
 
             DataViewDialog* dlg = new DataViewDialog();
-            //QString metadata = dm.getMetadata(name,dataIndex);
+            QString metadata = dm.getMetadata(name,dataIndex);
             //QString metadata("1425322307:r:46.06:g:11.53:y:32.09");
-            QString metadata("A: 110.,138.6,164.8 ");
+            //QString metadata("A: 110.,138.6,164.8 ");
+
             dlg->SetData(name,metadata,x0, y0, xp, yp, xn, yn);
             dlg->show();
         }

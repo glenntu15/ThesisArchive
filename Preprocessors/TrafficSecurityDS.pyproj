@@ -1,0 +1,49 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>83151bc8-c5e1-43e8-a067-bd3c5f7c9600</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>TrafficSecurityDS.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>TrafficSecurityDS</Name>
+    <RootNamespace>TrafficSecurityDS</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DistributionStats.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CycleData.py" />
+    <Compile Include="MutateData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="splitter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="synccheck.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrafficSecurityDS.py" />
+    <Compile Include="TrafficSecurityDS_thesis.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
