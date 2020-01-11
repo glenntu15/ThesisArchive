@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>326</width>
-    <height>200</height>
+    <width>378</width>
+    <height>240</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,15 +16,15 @@
   <widget class="QPushButton" name="closePushButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>160</y>
+     <x>260</x>
+     <y>180</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -34,11 +34,16 @@
   <widget class="QLineEdit" name="nameLineEdit">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>60</x>
      <y>10</y>
-     <width>261</width>
-     <height>20</height>
+     <width>271</width>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -55,7 +60,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -70,6 +75,11 @@
      <width>101</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>X</string>
@@ -87,6 +97,13 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Y</string>
    </property>
@@ -97,22 +114,22 @@
   <widget class="QLineEdit" name="ptBeforeYLineEdit">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>230</x>
      <y>50</y>
-     <width>101</width>
+     <width>111</width>
      <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="ptBeforeXLineEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>130</x>
      <y>50</y>
      <width>101</width>
      <height>21</height>
@@ -120,7 +137,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="readOnly">
@@ -132,13 +149,13 @@
     <rect>
      <x>0</x>
      <y>50</y>
-     <width>81</width>
+     <width>121</width>
      <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -153,13 +170,13 @@
     <rect>
      <x>0</x>
      <y>70</y>
-     <width>91</width>
+     <width>121</width>
      <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -174,7 +191,7 @@
   <widget class="QLineEdit" name="ptSelectedXLineEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>130</x>
      <y>70</y>
      <width>101</width>
      <height>21</height>
@@ -182,7 +199,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="readOnly">
@@ -192,15 +209,15 @@
   <widget class="QLineEdit" name="ptSelectedYLineEdit">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>230</x>
      <y>70</y>
-     <width>101</width>
+     <width>111</width>
      <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
   </widget>
@@ -209,13 +226,13 @@
     <rect>
      <x>0</x>
      <y>90</y>
-     <width>81</width>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -228,7 +245,7 @@
   <widget class="QLineEdit" name="ptAfterXLineEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>130</x>
      <y>90</y>
      <width>101</width>
      <height>21</height>
@@ -236,7 +253,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="readOnly">
@@ -246,26 +263,31 @@
   <widget class="QLineEdit" name="ptAfterYLineEdit">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>230</x>
      <y>90</y>
-     <width>101</width>
+     <width>111</width>
      <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="metadataLineEdit">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>120</y>
-     <width>201</width>
-     <height>21</height>
+     <x>90</x>
+     <y>130</y>
+     <width>271</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -275,14 +297,14 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>120</y>
+     <y>130</y>
      <width>81</width>
      <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">

@@ -201,7 +201,7 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
     if (showTitle) {
         customPlotXY->plotLayout()->insertRow(0);
         if (useBigFonts)
-            titleitem =  new QCPTextElement(customPlotXY, title, QFont("sans", 14, QFont::Normal));
+            titleitem =  new QCPTextElement(customPlotXY, title, QFont("sans", 16, QFont::Normal));
         else
             titleitem =  new QCPTextElement(customPlotXY, title, QFont("sans", 11, QFont::Normal));
         customPlotXY->plotLayout()->addElement(0, 0, titleitem);
@@ -270,12 +270,14 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
 
         if (useBigFonts) {
             QFont pfont("Newyork",6);
+            QFont lfont("Newyork",6);
             pfont.setStyleHint(QFont::SansSerif);
-            pfont.setPointSize(12);
+            pfont.setPointSize(14);
+            lfont.setPointSize(15);
             customPlotXY->xAxis->setTickLabelFont(pfont);
-            customPlotXY->xAxis->setLabelFont(pfont);
+            customPlotXY->xAxis->setLabelFont(lfont);
             customPlotXY->yAxis->setTickLabelFont(pfont);
-            customPlotXY->yAxis->setLabelFont(pfont);
+            customPlotXY->yAxis->setLabelFont(lfont);
         }
 
     }
@@ -454,14 +456,14 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
 
         if (useBigFonts) {
             QFont pfont("Newyork",6);
-            QFont tfont("Newyork",6);
+            QFont lfont("Newyork",6);
             pfont.setStyleHint(QFont::SansSerif);
-            pfont.setPointSize(14);
-            tfont.setPointSize(15);
+            pfont.setPointSize(15); // these were 14 and 15 - for single plots that what should be used. this is pairs
+            lfont.setPointSize(16);
             customPlotXY->xAxis->setTickLabelFont(pfont);
-            customPlotXY->xAxis->setLabelFont(pfont);
-            customPlotXY->yAxis->setTickLabelFont(tfont);
-            customPlotXY->yAxis->setLabelFont(pfont);
+            customPlotXY->xAxis->setLabelFont(lfont);
+            customPlotXY->yAxis->setTickLabelFont(pfont);
+            customPlotXY->yAxis->setLabelFont(lfont);
         }
 
     }
@@ -471,7 +473,7 @@ QCustomPlot* PlotWindow::CreateXYPlot() {
         customPlotXY->legend->setVisible(true);
         if (useBigFonts) {
             QFont lfont = customPlotXY->legend->font();
-            lfont.setPointSize(13);
+            lfont.setPointSize(14);
             customPlotXY->legend->setFont(lfont);
         }
     }
@@ -543,7 +545,7 @@ QCustomPlot* PlotWindow::CreateBarPlot()
     if (showTitle) {
         customPlotBar->plotLayout()->insertRow(0);
         if (useBigFonts)
-            titleitem =  new QCPTextElement(customPlotBar, title, QFont("sans", 13, QFont::Normal));
+            titleitem =  new QCPTextElement(customPlotBar, title, QFont("sans", 16, QFont::Normal));
         else
             titleitem =  new QCPTextElement(customPlotBar, title, QFont("sans", 11, QFont::Normal));
         customPlotBar->plotLayout()->addElement(0, 0, titleitem);
@@ -633,7 +635,7 @@ QCustomPlot* PlotWindow::CreateBarPlot()
         customPlotBar->legend->setVisible(true);
         if (useBigFonts) {
             QFont lfont = customPlotBar->legend->font();
-            lfont.setPointSize(13);
+            lfont.setPointSize(14);
             customPlotBar->legend->setFont(lfont);
         }
     }
@@ -660,7 +662,7 @@ QCustomPlot* PlotWindow::CreateStackedBarPlot()
     if (showTitle) {
         customPlotBar->plotLayout()->insertRow(0);
         if (useBigFonts)
-            titleitem =  new QCPTextElement(customPlotBar, title, QFont("sans", 14, QFont::Normal));
+            titleitem =  new QCPTextElement(customPlotBar, title, QFont("sans", 16, QFont::Normal));
         else
             titleitem =  new QCPTextElement(customPlotBar, title, QFont("sans", 11, QFont::Normal));
         customPlotBar->plotLayout()->addElement(0, 0, titleitem);
@@ -764,7 +766,7 @@ QCustomPlot* PlotWindow::CreateStackedBarPlot()
     if (useBigFonts) {
         QFont pfont("Newyork",6);
         pfont.setStyleHint(QFont::SansSerif);
-        pfont.setPointSize(15);
+        pfont.setPointSize(16);
         customPlotBar->xAxis->setTickLabelFont(pfont);
         customPlotBar->xAxis->setLabelFont(pfont);
         customPlotBar->yAxis->setTickLabelFont(pfont);
@@ -777,7 +779,7 @@ QCustomPlot* PlotWindow::CreateStackedBarPlot()
         customPlotBar->legend->setVisible(true);
         if (useBigFonts) {
             QFont lfont = customPlotBar->legend->font();
-            lfont.setPointSize(13);
+            lfont.setPointSize(14);
             customPlotBar->legend->setFont(lfont);
         }
     }
@@ -799,7 +801,7 @@ QCustomPlot* PlotWindow::CreateParallelCoordsPlot()
     if (showTitle) {
         customPlotXY->plotLayout()->insertRow(0);
         if (useBigFonts)
-            customPlotXY->plotLayout()->addElement(0, 0, new QCPTextElement(customPlotXY, title, QFont("sans", 14, QFont::Normal)));
+            customPlotXY->plotLayout()->addElement(0, 0, new QCPTextElement(customPlotXY, title, QFont("sans", 16, QFont::Normal)));
         else
             customPlotXY->plotLayout()->addElement(0, 0, new QCPTextElement(customPlotXY, title, QFont("sans", 11, QFont::Normal)));
     }
@@ -916,7 +918,7 @@ QCustomPlot* PlotWindow::CreateParallelCoordsPlot()
         customPlotXY->xAxis->setTickLabelFont(pfont);
         customPlotXY->xAxis->setLabelFont(lfont);
         customPlotXY->xAxis2->setLabelFont(lfont);
-         customPlotXY->xAxis2->setTickLabelFont(pfont);
+        customPlotXY->xAxis2->setTickLabelFont(pfont);
         customPlotXY->yAxis->setTickLabelFont(pfont);
         customPlotXY->yAxis->setLabelFont(lfont);
     }
@@ -932,7 +934,10 @@ QCustomPlot* PlotWindow::CreateParallelCoordsPlot()
         customPlotXY->legend->setVisible(true);
         if (useBigFonts) {
             QFont lfont = customPlotXY->legend->font();
-            lfont.setPointSize(13);
+
+            lfont.setPointSize(16);
+
+            customPlotXY->legend->setSelectedFont(lfont);
             customPlotXY->legend->setFont(lfont);
         }
     }
@@ -1322,8 +1327,9 @@ void PlotWindow::graphClicked(QCPAbstractPlottable *plottable, int dataIndex)
             double xn = plottable->interface1D()->dataMainKey(dataIndex+1);
 
             DataViewDialog* dlg = new DataViewDialog();
-            QString metadata = dm.getMetadata(name,dataIndex);
+            //QString metadata = dm.getMetadata(name,dataIndex);
             //QString metadata("1425322307:r:46.06:g:11.53:y:32.09");
+            QString metadata("A: 110.,138.6,164.8 ");
             dlg->SetData(name,metadata,x0, y0, xp, yp, xn, yn);
             dlg->show();
         }
@@ -1421,17 +1427,18 @@ void PlotWindow::CreateButtonBox(bool pointsOption, bool showdataoption)
     buttonlayout->setAlignment(Qt::AlignHCenter);
 
     QPushButton *removeVarButton = new QPushButton();
+    removeVarButton->setStyleSheet("QPushButton {background : rgb(200, 200, 200);}");
     removeVarButton->setText("Remove vars");
-    const QSize btnSize = QSize(80, 25);   // w, h
+    const QSize btnSize = QSize(95, 35);   // w, h
     QFont bfont = removeVarButton->font();
-    bfont.setPointSize(10);
+    bfont.setPointSize(11);
     removeVarButton->setFont(bfont);
     removeVarButton->setFixedSize(btnSize);
     buttonlayout->addWidget(removeVarButton);
 
     QCheckBox* legendSelect = new QCheckBox();
     QFont chfont = legendSelect->font();
-    chfont.setPointSize(11);
+    chfont.setPointSize(13);
     legendSelect->setFont(chfont);
     legendSelect->setText("Legend");
     if (showLegend)
@@ -1471,6 +1478,7 @@ void PlotWindow::CreateButtonBox(bool pointsOption, bool showdataoption)
 
 
     QLabel *combolabel = new QLabel("Groups");
+    combolabel->setFont(chfont);
     buttonlayout->addWidget(combolabel);
 
     // needs to be tied to number in colortable
@@ -1480,7 +1488,7 @@ void PlotWindow::CreateButtonBox(bool pointsOption, bool showdataoption)
         groupselect->addItem(sel[i]);
     }
     QFont cbfont = groupselect->font();
-    cbfont.setPointSize(10);
+    cbfont.setPointSize(11);
     groupselect->setFont(cbfont);
     groupselect->setCurrentIndex(numColorGroups-1);
     buttonlayout->addWidget(groupselect);
@@ -1491,10 +1499,10 @@ void PlotWindow::CreateButtonBox(bool pointsOption, bool showdataoption)
 
         showDataButton->setStyleSheet("QPushButton {background : rgb(200, 200, 200);}");
 
-        const QSize btnSizev = QSize(80, 25);   // w, h
+        const QSize btnSizev = QSize(85, 35);   // w, h
         showDataButton->setFixedSize(btnSizev);
         QFont bfont = showDataButton->font();
-        bfont.setPointSize(10);
+        bfont.setPointSize(11);
         showDataButton->setFont(bfont);
         buttonlayout->addWidget(showDataButton);
     }
